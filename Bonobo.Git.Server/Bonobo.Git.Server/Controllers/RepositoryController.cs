@@ -272,10 +272,7 @@ namespace Bonobo.Git.Server.Controllers
 
                     if (!model.IsImage && !model.IsTextFile)
                     {
-                        using (var stream = new MemoryStream(model.File.Data))
-                        {
-                            return File(stream, "application/octet-stream", model.File.Name);
-                        }
+                        return File(model.File.Data, "application/octet-stream", model.File.Name);                        
                     }
                 }
 
